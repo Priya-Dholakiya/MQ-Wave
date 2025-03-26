@@ -1,0 +1,174 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    max-width: 1140px;
+    margin: 0 auto;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #2c2c2c;
+    flex-wrap: wrap;
+}
+.main .loader {
+    width: 60px;
+    height: 60px;
+    margin-left: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+/* Loader 1: Bouncing Dots */
+.main .loader1 div {
+    width: 12px;
+    height: 12px;
+    margin: 3px;
+    background-color: #4CAF50;
+    border-radius: 50%;
+    animation: bounce 1.5s infinite;
+}
+.main .loader1 div:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.main .loader1 div:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+    0%, 80%, 100% { transform: scale(0); }
+    40% { transform: scale(1); }
+}
+/* Loader 2: Rotating Squares */
+.main .loader2 {
+    width: 50px;
+    height: 50px;
+    position: relative;
+}
+.main .loader2 div {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #FF3D00;
+    animation: rotate 1.5s linear infinite;
+}
+.main .loader2 div:nth-child(1) {
+    top: 0;
+    left: 0;
+}
+.main .loader2 div:nth-child(2) {
+    top: 0;
+    right: 0;
+    animation-delay: 0.3s;
+}
+.main .loader2 div:nth-child(3) {
+    bottom: 0;
+    right: 0;
+    animation-delay: 0.6s;
+}
+.main .loader2 div:nth-child(4) {
+    bottom: 0;
+    left: 0;
+    animation-delay: 0.9s;
+}
+
+@keyframes rotate {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.5); }
+    100% { transform: scale(1); }
+}
+ /* Loader 3: Expanding Circle */
+ .loader3 {
+    width: 20px;
+    height: 20px;
+    background-color: #00BCD4;
+    border-radius: 50%;
+    animation: expand 1.5s infinite ease-in-out;
+}
+@keyframes expand {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(3); opacity: 0; }
+}
+ /* Loader 4: Dual Rotating Circles */
+ .loader4 {
+    width: 50px;
+    height: 50px;
+    position: relative;
+}
+.loader4 div {
+    width: 100%;
+    height: 100%;
+    border: 4px solid transparent;
+    border-radius: 50%;
+    position: absolute;
+}
+.loader4 div:nth-child(1) {
+    border-top-color: #FF5722;
+    animation: rotateClockwise 1.5s linear infinite;
+}
+.loader4 div:nth-child(2) {
+    border-bottom-color: #03A9F4;
+    animation: rotateAntiClockwise 1.5s linear infinite;
+}
+@keyframes rotateClockwise {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+@keyframes rotateAntiClockwise {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(-360deg); }
+}
+
+/* Loader 5: Orbiting Dots */
+.loader5 {
+    width: 60px;
+    height: 60px;
+    position: relative;
+}
+.loader5 div {
+    width: 20px;
+    height: 20px;
+    background-color: crimson;
+    border-radius: 25%;
+    position: absolute;
+    animation: orbit 1.5s linear infinite;
+}
+@keyframes orbit {
+    0% { transform: rotate(0deg) translateX(30px); }
+    100% { transform: rotate(360deg) translateX(30px); }
+}
+  /* Loader 6: Spinning Bars */
+  .loader6 {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.loader6 div {
+    width: 8px;
+    height: 40px;
+    margin-left: 10px;
+    background-color: #FFEB3B;
+    animation: spinBars 1.5s infinite ease-in-out;
+}
+.loader6 div:nth-child(1) {
+    animation-delay: -0.3s;
+}
+.loader6 div:nth-child(2) {
+    animation-delay: -0.15s;
+}
+@keyframes spinBars {
+    0% { transform: scaleY(1); }
+    50% { transform: scaleY(0.5); }
+    100% { transform: scaleY(1); }
+}
